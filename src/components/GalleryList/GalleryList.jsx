@@ -29,7 +29,7 @@ function GalleryList({ galleryList, changeLike }) {
           <thead>
             <tr>
               <th>Gallery Item</th>
-              <th>Description</th>
+              <th>Description/Image</th>
               <th>Likes</th>
 
             </tr>
@@ -46,20 +46,7 @@ function GalleryList({ galleryList, changeLike }) {
               
             ))}
           </tbody>
-          <h3>
-            { galleryList.map((list)=>(
-                <li key={list.id}> Picture Title: {list.title}
-                <h1>
-                <button data-testid="toggle" onClick={() => toggleDescription(list.id)}>  
-                    {showGal[list.id] ? "Image" : "Description"}
-                </button>
-                </h1>
-                <td>
-                    {showGal[list.id] ? list.description : <img src={list.url} />}
-                </td>
-                </li>
-            ))}
-          </h3>
+
         </table>
       </section>
     </div>
