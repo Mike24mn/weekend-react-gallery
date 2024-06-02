@@ -40,6 +40,8 @@ function GalleryList({ galleryList, changeLike }) {
                 key={item.id}
                 item={item}
                 changeLike={changeLike}
+                toggleDescription={toggleDescription}
+                showGal={showGal}
               />
               
             ))}
