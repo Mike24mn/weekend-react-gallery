@@ -29,6 +29,8 @@ To render images inside your React app, this totally works. Check out the exampl
 
 > **NOTE:** Because the `public/` folder is where our static assets live, all of your `<img>` elements' `src=` attributes will look inside the `public/` folder for the filepath you provide.
 
+// IMPORTANT TO REMEBER ^^^
+
 ## Base Mode:
 
 ### Required Functionality:
@@ -36,7 +38,10 @@ To render images inside your React app, this totally works. Check out the exampl
 For this project, you will create a gallery page to share pictures of things that are important to you.
 
 Users should be able to:
-* Click on a gallery item to toggle between seeing its image or description text.
+* Click on a gallery item to toggle between seeing its image or description text. 
+
+// SIM TO WHAT WE DID IN GROUP PROJECT
+
 * Click on a gallery item's "like" button to add a "like" to an image. 
 
 ### Required Architecture:
