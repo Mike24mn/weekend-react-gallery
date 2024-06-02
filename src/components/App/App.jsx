@@ -12,6 +12,8 @@ import GalleryList from "../GalleryList/GalleryList.jsx";
 function App() {
 
   let [galleryList, setGalleryList] = useState([]);
+  let [showGal, setGal] = useState({})
+  let [showDescript, setShowDescript] = useState({})
 
 
   // Runs when the component is first put on the DOM
@@ -48,18 +50,21 @@ function App() {
         });
     };
 
+    const toggleDescription = (id) => {
+      setGal(prevState => ({
+          ...prevState,
+          [id]: !prevState[id],
+      }))
+  }
+
   return (
     <div data-testid="app">
       <header>
         <h1>React Gallery</h1>
       </header>
       <main>
-        <GalleryList galleryList={galleryList} fetchList={fetchList} changeLike={changeLike} />
+        <GalleryList galleryList={galleryList} changeLike={changeLike} showDescript={showDescript} showGal={showGal} />
       </main>
-
-      <p>The gallery goes here!</p>
-      <img src="images/goat_small.jpg" />
-      <img src="images/goat_stache.png" />
     </div>
   );
 }

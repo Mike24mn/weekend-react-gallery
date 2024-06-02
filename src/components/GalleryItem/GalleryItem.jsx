@@ -1,4 +1,6 @@
-function GalleryItem({ item, changeLike }) {
+import React from "react";
+
+function GalleryItem({ item, changeLike, }) {
 
     return (
     <div data-testid="galleryItem">
@@ -6,23 +8,21 @@ function GalleryItem({ item, changeLike }) {
         
         <td>{item.title}</td>
         <td>{item.description}</td>
-        {
+        
           <td>
             {item.likes}
           </td> 
-        }
+        
         <td>
         <img src={item.url}/>
         </td>
         <td>
           <button 
+            data-testid="like"
             onClick={(event) => changeLike(item)}>
             Like
           </button>
-          <button 
-            onClick={() => toggleDescription(description.id)}>
-            Description
-          </button>
+
         </td>
       </tr>
     </div>
