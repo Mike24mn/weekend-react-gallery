@@ -1,4 +1,5 @@
 import GalleryItem from "../GalleryItem/GalleryItem.jsx";
+import App from "../App/App.jsx";
 
 
 function GalleryList({ galleryList, changeLike }) {

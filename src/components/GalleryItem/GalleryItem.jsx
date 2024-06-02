@@ -10,11 +10,17 @@ function GalleryItem({ item, changeLike }) {
             {item.likes}
           </td> 
         }
-  
+        <td>
+        <img src={item.url}/>
+        </td>
         <td>
           <button 
             onClick={() => changeLike(item)}>
             Like
+          </button>
+          <button 
+            onClick={() => toggleDescription(description.id)}>
+            Description
           </button>
         </td>
       </tr>
