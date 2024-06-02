@@ -1,6 +1,7 @@
 function GalleryItem({ item, changeLike }) {
 
     return (
+    <div data-testid="galleryItem">
       <tr key={item.id}>
         
         <td>{item.title}</td>
@@ -15,7 +16,7 @@ function GalleryItem({ item, changeLike }) {
         </td>
         <td>
           <button 
-            onClick={() => changeLike(item)}>
+            onClick={(event) => changeLike(item)}>
             Like
           </button>
           <button 
@@ -24,6 +25,7 @@ function GalleryItem({ item, changeLike }) {
           </button>
         </td>
       </tr>
+    </div>
     );
   
   }

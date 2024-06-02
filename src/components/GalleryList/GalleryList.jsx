@@ -5,7 +5,7 @@ import App from "../App/App.jsx";
 function GalleryList({ galleryList, changeLike }) {
 
     return (
-     <>
+     <div data-testid="galleryList">
       <section>
         <h2>Gallery Contents</h2>
         <table>
@@ -28,7 +28,7 @@ function GalleryList({ galleryList, changeLike }) {
           </tbody>
         </table>
       </section>
-    </>
+    </div>
     );
     
 }

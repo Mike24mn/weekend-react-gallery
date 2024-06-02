@@ -8,6 +8,7 @@ import GalleryList from "../GalleryList/GalleryList.jsx";
 
 
 
+
 function App() {
 
   let [galleryList, setGalleryList] = useState([]);
@@ -33,18 +34,11 @@ function App() {
       });
   };
 
-    // Change quantity on server
-    const changeLike = (item) => {
+    // Change quantity likes
+    function changeLike(item) {
     
-      if (item) {
-        item.likes += 1;
-      }
-      else {
-        console.log("Error clicking like button");
-      }
-  
       axios
-        .put(`/api/gallery/${item.id}`, { likes: item.likes })
+        .put(`/api/gallery/${item.id}`, { likes: item.likes + 1 })
         .then((response) => {
           fetchList();
         })

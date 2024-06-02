@@ -3,7 +3,7 @@ const app = express();
 const gallery = require('./routes/gallery.router.js');
 const PORT = process.env.PORT || 5001;
 
-const bodyParser = require('body-parser'); // delete this maybe
+const bodyParser = require('body-parser'); // delete maybe
 
 /** ---------- MIDDLEWARE ---------- **/
 app.use(bodyParser.json()); // delete this maybe

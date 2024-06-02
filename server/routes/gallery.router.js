@@ -6,18 +6,21 @@ const pool = require('../modules/pool.js')
 // Database name is react-gallery
 
 // PUT /gallery/like/:id
-router.put('/like/:id', (req, res) => {
+
+// Set up put route incorrectly, it is fixed now as it should be accessing :/id not /api/gallery/:id 
+
+router.put('/:id', (req, res) => {
   let idToUpdate = req.params.id;
   let likes = req.body.likes;
 
-  if (!likes) {
+  if (likes === undefined) {
     // If we don't get expected likes send back bad status
     res.sendStatus(500);
     return; // Do it now without running code below
   }
 
   let sqlText = `UPDATE gallery SET likes=$2 WHERE id=$1`;
-  pool.query(sqlText, [idToUpdate, quantity])
+  pool.query(sqlText, [idToUpdate, likes])
     .then((result) => {
       res.sendStatus(200);
     })
